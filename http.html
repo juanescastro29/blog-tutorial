@@ -57,7 +57,7 @@ https://templatemo.com/tm-553-xtra-blog
                 DHCP
               </a>
             </li>
-            <li class="tm-nav-item active">
+            <li class="tm-nav-item">
               <a href="ftp.html" class="tm-nav-link">
                 <i class="fa fa-folder-open"></i>
                 FTP
@@ -69,7 +69,7 @@ https://templatemo.com/tm-553-xtra-blog
                 SMTP
               </a>
             </li>
-            <li class="tm-nav-item">
+            <li class="tm-nav-item active">
               <a href="http.html" class="tm-nav-link">
                 <i class="fa fa-code"></i>
                 HTTP
@@ -84,17 +84,14 @@ https://templatemo.com/tm-553-xtra-blog
           </ul>
         </nav>
         <div class="tm-mb-65">
-          <a href="https://facebook.com" class="tm-social-link">
-            <i class="fab fa-facebook tm-social-icon"></i>
+          <a href="https://github.com/juanescastro29" class="tm-social-link" target="_blank">
+            <i class="fab fa-github tm-social-icon"></i>
           </a>
-          <a href="https://twitter.com" class="tm-social-link">
-            <i class="fab fa-twitter tm-social-icon"></i>
-          </a>
-          <a href="https://instagram.com" class="tm-social-link">
-            <i class="fab fa-instagram tm-social-icon"></i>
-          </a>
-          <a href="https://linkedin.com" class="tm-social-link">
+          <a href="https://www.linkedin.com/in/juan-esteban-castro-molano-248912150/" class="tm-social-link" target="_blank">
             <i class="fab fa-linkedin tm-social-icon"></i>
+          </a>
+          <a href="https://www.instagram.com/juanes_castro29/" class="tm-social-link" target="_blank">
+            <i class="fab fa-instagram tm-social-icon"></i>
           </a>
         </div>
       </div>
@@ -110,7 +107,7 @@ https://templatemo.com/tm-553-xtra-blog
                 </h2>
                 <p class="tm-mb-40">Marzo 25, 2023 posted por Juan E. Castro</p>
                 <p align="justify">
-                    Las siglas de FTP significan File Transfer Protocol, que se traduce como Protocolo de Transferencia de Archivos. Como su nombre indica, se trata de un protocolo que permite transferir archivos directamente de un dispositivo a otro.
+                    El HTTP es el protocolo de transmisión de información de la World Wide Web, es decir, el código que se establece para que el computador solicitante y el que contiene la información solicitada puedan “hablar” un mismo idioma a la hora de transmitir información por la red.
                 </p>
                 <p>
                     Requisitos:
@@ -128,85 +125,27 @@ https://templatemo.com/tm-553-xtra-blog
                 </p>
                 <img class="tm-mb-40 p-4" src="./resources/instalacionIIS.png" alt="paso1">
                 <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Paso 2: Agregar servicio de FTP.
-                </h3>
-                <p align="justify">
-                    Durante la instalacion del servidor IIS se selecciona como servicios el servicio FTP.
-                </p>
-                <img class="tm-mb-40 p-4" src="./resources/servicioFTP.png" alt="paso2">
-                <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Paso 3: Creacion de usuarios y grupos para el acceso al servidor FTP.
-                </h3>
-                <p align="justify">
-                    Para la creacion de usuarios y grupos es necesario dar click derecho en el logo de windows y seleccionar la opcion Administracion de Equipos y luego ir a la carpeta de Usuarios y Grupos Locales.
-                </p>
-                <img class="p-4" src="./resources/administracionEquipos.png" alt="paso3">
-                <img class="tm-mb-40 p-4" src="./resources/gruposLocales.png" alt="pasoMedio">
-                <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Paso 4: Creacion de Usuarios.
-                </h3>
-                <p align="justify">
-                    Se crean los usuarios accediendo a la carpeta usuarios y dando click derecho en la zona blanca, crear usuario. En la creacion se quita la opcion que esta seleccionada en la parte inferior.
-                </p>
-                <img class="tm-mb-40 p-4" src="./resources/crearUsuario.png" alt="paso4">
-                <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Paso 5: Creacion de Grupo.
-                </h3>
-                <p align="justify">
-                    Se crea los grupos accediendo a la carpeta grupos y dando click derecho en la zona blanca, crear grupo. En la creacion del grupo se agregan los usuarios anteriormente creados.
-                </p>
-                <img class="tm-mb-40 p-4" src="./resources/creacionGrupo.png" alt="paso5">
-                <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Paso 6: Creacion de carpeta compartida.
-                </h3>
-                <p align="justify">
-                    Se crea una carpeta la cual sera la que se va a compartir por medio del servidor FTP. La carpeta se creo en la ubicacion que se ve en la imagen.
-                </p>
-                <img class=" p-4" src="./resources/carpetaFTP.png" alt="paso6">
-                <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Paso 7: Desactivar la herencia para la carpeta creada.
-                </h3>
-                <p align="justify">
-                    Para desactivar la herencia hay que ir a las propiedades de la carpeta, luego ir a la pestaña de seguridad y estando alli dar click en la opcion de opciones avanzadas. Por ultimo desactivar la herencia y dar click en la primera opcion.
-                </p>
-                <img class="tm-mb-40 p-4" src="./resources/herencia.png" alt="paso7">
-                <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Paso 8: Agregar grupo a los permisos de la carpeta.
-                </h3>
-                <p align="justify">
-                    Luego de desactivar la herencia, lo siguiente es agregar el grupo como grupo con permisos total sobre la carpeta creada.
-                </p>
-                <img class="tm-mb-40 p-4" src="./resources/grupoPermisos.png" alt="paso8">
-                <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Paso 9: Configuracion del servicio FTP en el servidor IIS.
+                    Paso 2: Configuracion del servicio HTTP el servidor IIS.
                 </h3>
                 <p align="justify">
                     Entramos en la configuracion del servidor IIS en la pestaña herramientas en el Administrador de Servidor.
                 </p>
-                <img class="tm-mb-40 p-4" src="./resources/configuracionIIS.png" alt="paso9">
+                <img class="tm-mb-40 p-4" src="./resources/configuracionHTTP.png" alt="paso1">
                 <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Paso 10: Configuracion del servicio FTP en el servidor IIS.
+                    Paso 3: Configuracion del servicio HTTP en el servidor IIS.
                 </h3>
                 <p align="justify">
-                    Damos click derecho en la carpeta sitios y escogemos la opcion Agregar sitio FTP. Nos pedira un nombre el cual puede ser cualquiera y nos pedira la ruta de la carpeta que se creo pasos anteriores, seguido de esto nos pedira agregar la direccion Ip asociada al servicio FTP la cual es la direccion de la maquina virtual.
-                    Seleccionamos la opcion Sin SSL.
+                    Damos click derecho en la carpeta sitios y escogemos la opcion Agregar sitio Web. El nombre del sitio sera el que nosotros queramos, la ruta de acceso correspondera a la ubicacion de nuestros archivos de una pagina web y por ultimo la direccion Ip sera la Ip de la maquina.
                 </p>
-                <img class="tm-mb-40 p-4" src="./resources/configuracionFTP.png" alt="paso10">
+                <img class="tm-mb-40 p-4" src="./resources/nuevoSitioWeb.png" alt="paso3">
                 <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Paso 11: Configuracion de permisos y autenticacion.
+                    Pruebas de funcionamiento del servidor HTTP.
                 </h3>
                 <p align="justify">
-                    Continuando con la configuracion, escogemos la opcion de Autenticacion Basica, damos permiso a Roles o Grupos de usuarios especificos y por ultimo les damos permisos de Lectura y Escritura.
+                    En el lado del cliente la prueba se realizara entrando al navegador y poner en la barra de direccion el nombre que se le coloco al sitio en la creacion del mismo, esto tambien se puede realizar ingresando la direccion Ip que se coloco en los pasos anteriores.
                 </p>
-                <img class="tm-mb-40 p-4" src="./resources/permisosAutenticacion.png" alt="paso10">
-                <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Pruebas de funcionamiento del servidor FTP.
-                </h3>
-                <p align="justify">
-                    Verificando que nuestro servidor FTP este funcionando correctamente accedemos desde nuestra maquina cliente. Para el caso podemos acceder desde el explorador de archivos como se muestra en las siguientes imagenes. Si se realiza la conexion los pedira las credenciales corespondientes al usuario creado durante la configuracion total del servidor. Los archivos o carpetas que se creen en esa carpeta se podran visualizar en ambas maquinas, tanto del lado del servidor como del lado del cliente.
-                </p>
-                <img class="p-4" src="./resources/ftpPrueba.png" alt="prueba1">
-                <img class="p-4" src="./resources/solicitudCredenciales.png" alt="prueba2">
+                <img class="p-4" src="./resources/prueba1.png" alt="prueba1">
+                <img class="p-4" src="./resources/prueba2.png" alt="prueba2">
               </div>
             </div>
           </div>
