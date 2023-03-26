@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutorial de servidores</title>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css" />
+    <!-- https://fontawesome.com/ -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <!-- https://fonts.google.com/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/templatemo-xtra-blog.css" rel="stylesheet" />
+    <!--
+    
+TemplateMo 553 Xtra Blog
+
+https://templatemo.com/tm-553-xtra-blog
+
+-->
+  </head>
+  <body>
+    <header class="tm-header" id="tm-header">
+      <div class="tm-header-wrapper">
+        <button
+          class="navbar-toggler"
+          type="button"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="tm-site-header">
+          <div class="mb-3 mx-auto tm-site-logo">
+            <i class="fas fa-graduation-cap fa-2x"></i>
+          </div>
+          <h1 class="text-center">Tutorial de servidores</h1>
+        </div>
+        <nav class="tm-nav" id="tm-nav">
+          <ul>
+            <li class="tm-nav-item">
+              <a href="index.html" class="tm-nav-link">
+                <i class="fas fa-home"></i>
+                Inicio
+              </a>
+            </li>
+            <li class="tm-nav-item">
+              <a href="dns.html" class="tm-nav-link">
+                <i class="fa fa-laptop"></i>
+                DNS
+              </a>
+            </li>
+            <li class="tm-nav-item active">
+              <a href="dhcp.html" class="tm-nav-link">
+                <i class="fa fa-server"></i>
+                DHCP
+              </a>
+            </li>
+            <li class="tm-nav-item">
+              <a href="ftp.html" class="tm-nav-link">
+                <i class="fa fa-folder-open"></i>
+                FTP
+              </a>
+            </li>
+            <li class="tm-nav-item">
+              <a href="smtp.html" class="tm-nav-link">
+                <i class="fa fa-inbox"></i>
+                SMTP
+              </a>
+            </li>
+            <li class="tm-nav-item">
+              <a href="http.html" class="tm-nav-link">
+                <i class="fa fa-code"></i>
+                HTTP
+              </a>
+            </li>
+            <li class="tm-nav-item">
+              <a href="about.html" class="tm-nav-link">
+                <i class="fas fa-users"></i>
+                About
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="tm-mb-65">
+          <a href="https://facebook.com" class="tm-social-link">
+            <i class="fab fa-facebook tm-social-icon"></i>
+          </a>
+          <a href="https://twitter.com" class="tm-social-link">
+            <i class="fab fa-twitter tm-social-icon"></i>
+          </a>
+          <a href="https://instagram.com" class="tm-social-link">
+            <i class="fab fa-instagram tm-social-icon"></i>
+          </a>
+          <a href="https://linkedin.com" class="tm-social-link">
+            <i class="fab fa-linkedin tm-social-icon"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+    <div class="container-fluid">
+      <main class="tm-main">
+        <div class="row tm-row">
+          <div class="col-lg-8 tm-post-col">
+            <div class="tm-post-full">
+              <div class="mb-4">
+                <h2 class="pt-2 tm-color-primary tm-post-title">
+                    Tutorial de instalacion servidor DHCP
+                </h2>
+                <p class="tm-mb-40">Marzo 25, 2023 posted por Juan E. Castro</p>
+                <p align="justify">
+                    Es un protocolo de red que utiliza una arquitectura cliente-servidor. Por tanto, tendremos uno o varios servidores DHCP y también uno o varios clientes, que se deberán comunicar entre ellos correctamente para que el servidor DHCP brinde información a los diferentes clientes conectados. Este protocolo se encarga de asignar de manera dinámica y automática una dirección IP, ya sea una dirección IP privada desde el router hacia los equipos de la red local, o también una IP pública por parte de un operador que utilice este tipo de protocolo para el establecimiento de la conexión.
+                    A continuacion se relizara un tutorial de como se realiza la intalacion de un servidor de DNS en Windows Server 2012.
+                </p>
+                <p>
+                    Requisitos:
+                    <ul class="tm-mb-40 pl-5">
+                        <li class="tm-color-primary">Direccion Ip estatica</li>
+                        <li class="tm-color-primary">Servidor DNS</li>
+                        <li class="tm-color-primary">Maquina virtual Windows Server 2012</li>
+                        <li class="tm-color-primary">Maquina virtual con Window XP, 7, 8, 8.1</li>
+                    </ul>
+                </p>
+                <h3 class="pt-2 tm-color-primary tm-post-title">
+                    Paso 1: Intalacion del servidor DHCP.
+                </h3>
+                <p align="justify">
+                    Se realiza la instalacion del servidor de DHCP a traves del Administrador del servidor en la opcion Agregar Roles y Caracteristicas.
+                </p>
+                <img class="tm-mb-40 p-4" src="./resources/instalacionDHCP.png" alt="paso1">
+                <h3 class="pt-2 tm-color-primary tm-post-title">
+                    Paso 2: Configuracion del servidor DHCP.
+                </h3>
+                <p align="justify">
+                    Se realiza la configuracion del servidor de DHCP en la seccion herramientas del Administrador del Servidor en la opcion DHCP. Se abre la carpeta principal y nos situamos en la carpeta de IPv4.
+                </p>
+                <img class="tm-mb-40 p-4" src="./resources/configuracionDHCP.png" alt="paso2">
+                <h3 class="pt-2 tm-color-primary tm-post-title">
+                    Paso 3: Creacion y configuracion del Ambito.
+                </h3>
+                <p align="justify">
+                    Situados en la carpeta de IPv4 damos click derecho y seleccionamos la opcion de Ambito Nuevo y procedemos a la configuracion de un nuevo Ambito para el servidor DHCP. El nombre del ambito puede ser cualquiera.
+                </p>
+                <img class="tm-mb-40 p-4" src="./resources/creacionAmbito.png" alt="paso3">
+                <h3 class="pt-2 tm-color-primary tm-post-title">
+                    Paso 4: Configuracion del rango del Ambito.
+                </h3>
+                <p align="justify">
+                    En el paso anterior empezamos con la configuracion del Ambito Nuevo, continuando con esto lo primero que que es necesario configurar es el rango de direcciones las cuales repartira nuestro servidor DHCP.
+                </p>
+                <img class="tm-mb-40 p-4" src="./resources/rangoDHCP.png" alt="paso4">
+                <h3 class="pt-2 tm-color-primary tm-post-title">
+                    Paso 5: Configuracion de la direccion para router del Ambito.
+                </h3>
+                <p align="justify">
+                    En este paso se coloca la direccion de puerta de enlace configurada en la Ip estatica de la maquina virtual, para el caso es 192.168.4.2 se da en agregar y siguiente. 
+                </p>
+                <img class="tm-mb-40 p-4" src="./resources/router.png" alt="paso5">
+                <h3 class="pt-2 tm-color-primary tm-post-title">
+                    Paso 6: Configuracion de nombre de dominio y DNS.
+                </h3>
+                <p align="justify">
+                    Como requisito inicial era necesario tener un servidor de DNS configurado, para este caso el servidor configurado tiene el nombre de juanes.com y tiene la direccion Ip 192.168.4.10.
+                </p>
+                <img class="tm-mb-40 p-4" src="./resources/servidorDNSDHCP.png" alt="paso6">
+                <h3 class="pt-2 tm-color-primary tm-post-title">
+                    Pruebas de funcionamiento del servidor DHCP.
+                </h3>
+                <p align="justify">
+                    Para realizar la prueba de que el servidor esta bien configurado, vamos a nuestra maquina virtual configurada como cliente. Con el comando ipconfig en la consola del sistema (cmd) podemos observar que nuestro servicio DHCP esta funcionando correctamente.
+                    Tambien lo podemos comprobar en el lado del servidor entrando a la carpeta del ambito creado y entrando en la otra carpeta llamada Concesiones de direcciones.
+                </p>
+                <img class="p-4" src="./resources/pingCliente.png" alt="prueba1">
+                <img class="tm-mb-40 p-4" src="./resources/ladoSevidor.png" alt="prueba"2>
+              </div>
+            </div>
+          </div>
+          <aside class="col-lg-4 tm-aside-col">
+            <div class="tm-post-sidebar">
+              <hr class="mb-3 tm-hr-primary" />
+              <h2 class="tm-mb-40 tm-post-title tm-color-primary">
+                Post Relacionados
+              </h2>
+              <a href="http.html" class="d-block tm-mb-40">
+                <figure>
+                  <figcaption class="tm-color-primary">
+                    Tutorial de instalacion servidor HTTP
+                  </figcaption>
+                </figure>
+              </a>
+              <a href="smtp.html" class="d-block tm-mb-40">
+                <figure>
+                  <figcaption class="tm-color-primary">
+                    Tutorial de instalacion servidor SMTP
+                  </figcaption>
+                </figure>
+              </a>
+              <a href="ftp.html" class="d-block tm-mb-40">
+                <figure>
+                  <figcaption class="tm-color-primary">
+                    Tutorial de instalacion servidor FTP
+                  </figcaption>
+                </figure>
+              </a>
+            </div>
+          </aside>
+        </div>
+      </main>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/templatemo-script.js"></script>
+  </body>
+</html>

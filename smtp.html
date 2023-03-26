@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutorial de servidores</title>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css" />
+    <!-- https://fontawesome.com/ -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <!-- https://fonts.google.com/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/templatemo-xtra-blog.css" rel="stylesheet" />
+    <!--
+    
+TemplateMo 553 Xtra Blog
+
+https://templatemo.com/tm-553-xtra-blog
+
+-->
+  </head>
+  <body>
+    <header class="tm-header" id="tm-header">
+      <div class="tm-header-wrapper">
+        <button
+          class="navbar-toggler"
+          type="button"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="tm-site-header">
+          <div class="mb-3 mx-auto tm-site-logo">
+            <i class="fas fa-graduation-cap fa-2x"></i>
+          </div>
+          <h1 class="text-center">Tutorial de servidores</h1>
+        </div>
+        <nav class="tm-nav" id="tm-nav">
+          <ul>
+            <li class="tm-nav-item">
+              <a href="index.html" class="tm-nav-link">
+                <i class="fas fa-home"></i>
+                Inicio
+              </a>
+            </li>
+            <li class="tm-nav-item">
+              <a href="dns.html" class="tm-nav-link">
+                <i class="fa fa-laptop"></i>
+                DNS
+              </a>
+            </li>
+            <li class="tm-nav-item">
+              <a href="dhcp.html" class="tm-nav-link">
+                <i class="fa fa-server"></i>
+                DHCP
+              </a>
+            </li>
+            <li class="tm-nav-item active">
+              <a href="ftp.html" class="tm-nav-link">
+                <i class="fa fa-folder-open"></i>
+                FTP
+              </a>
+            </li>
+            <li class="tm-nav-item">
+              <a href="smtp.html" class="tm-nav-link">
+                <i class="fa fa-inbox"></i>
+                SMTP
+              </a>
+            </li>
+            <li class="tm-nav-item">
+              <a href="http.html" class="tm-nav-link">
+                <i class="fa fa-code"></i>
+                HTTP
+              </a>
+            </li>
+            <li class="tm-nav-item">
+              <a href="about.html" class="tm-nav-link">
+                <i class="fas fa-users"></i>
+                About
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="tm-mb-65">
+          <a href="https://facebook.com" class="tm-social-link">
+            <i class="fab fa-facebook tm-social-icon"></i>
+          </a>
+          <a href="https://twitter.com" class="tm-social-link">
+            <i class="fab fa-twitter tm-social-icon"></i>
+          </a>
+          <a href="https://instagram.com" class="tm-social-link">
+            <i class="fab fa-instagram tm-social-icon"></i>
+          </a>
+          <a href="https://linkedin.com" class="tm-social-link">
+            <i class="fab fa-linkedin tm-social-icon"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+    <div class="container-fluid">
+      <main class="tm-main">
+        <div class="row tm-row">
+          <div class="col-lg-8 tm-post-col">
+            <div class="tm-post-full">
+              <div class="mb-4">
+                <h2 class="pt-2 tm-color-primary tm-post-title">
+                    Tutorial de instalacion servidor SMTP
+                </h2>
+                <p class="tm-mb-40">Marzo 25, 2023 posted por Juan E. Castro</p>
+                <p align="justify">
+                    Las siglas de FTP significan File Transfer Protocol, que se traduce como Protocolo de Transferencia de Archivos. Como su nombre indica, se trata de un protocolo que permite transferir archivos directamente de un dispositivo a otro.
+                </p>
+                <p>
+                    Requisitos:
+                    <ul class="tm-mb-40 pl-5">
+                        <li class="tm-color-primary">Programa ThunderBird en el cliente</li>
+                        <li class="tm-color-primary">Direccion Ip estatica</li>
+                        <li class="tm-color-primary">Maquina virtual Windows Server 2012</li>
+                        <li class="tm-color-primary">Maquina virtual con Window XP, 7, 8, 8.1</li>
+                    </ul>
+                </p>
+                <h3 class="pt-2 tm-color-primary tm-post-title">
+                    Paso 1: Creacion de nuevo host, CNAME e Intercambiador de correos.
+                </h3>
+                <p align="justify">
+                    La creacion de estos tres elementos se realizara en un servidor de DNS previamente configurado, en nuestro caso tenemos uno ya configurado. La configuracion de estos elementos sera la siguiente.
+                </p>
+                <img class="p-4" src="./resources/nuevoHost.png" alt="paso1">
+                <img class="p-4" src="./resources/cname.png" alt="paso1">
+                <img class="tm-mb-40 p-4" src="./resources/intercambiadorDeCorreos.png" alt="paso1">
+                <h3 class="pt-2 tm-color-primary tm-post-title">
+                    Paso 2: Instalacion del programa Mercury.
+                </h3>
+                <p align="justify">
+                    Se procede con la instalacion del programa Mercury el cual nos ayudara a montar nuestro servidor SMTP. La intalacion se realiza de manera normal como cualquier otro programa.
+                </p>
+                <img class="tm-mb-40 p-4" src="./resources/mercury.png" alt="paso2">
+                <h3 class="pt-2 tm-color-primary tm-post-title">
+                    Paso 3: Configuracion de Mercury.
+                </h3>
+                <p align="justify">
+                    Luego de finalizar la instalacion del programa, procedemos a realizar la configuracion del mismo. Accedemos primero en la parte de configuracion y la opcion Mercury core module. Alli verificamos que nuestra direccion Ip sea la correcta.
+                </p>
+                <img class="tm-mb-40 p-4" src="./resources/ipMercury.png" alt="paso3">
+                <h3 class="pt-2 tm-color-primary tm-post-title">
+                    Paso 4: Configuracion Mercury - Local Domains.
+                </h3>
+                <p align="justify">
+                    Continuando con la configuracion de Mercury, en la misma ventada del paso anterior accedemos a la pestaña Local Domains. Alli agregaremos los siguientes dominios si no los tenemos, siempre colocando la Ip de la maquina en la que estamos trabajando.
+                </p>
+                <img class="tm-mb-40 p-4" src="./resources/domains.png" alt="paso4">
+                <h3 class="pt-2 tm-color-primary tm-post-title">
+                    Paso 5: Creacion de Usuarios.
+                </h3>
+                <p align="justify">
+                    La creacion de usuarios se realiza en la pestaña de configuracion, opcion Manage local users. En esta pestaña se crearan los usuarios que podran acceder al servidor SMTP.
+                </p>
+                <img class="p-4" src="./resources/usuarios.png" alt="paso5">
+                <img class="tm-mb-40 p-4" src="./resources/agregar.png" alt="paso5">
+                <h3 class="pt-2 tm-color-primary tm-post-title">
+                    Pruebas de funcionamiento del servidor SMTP.
+                </h3>
+                <p align="justify">
+                    La verificacion se realizara desde el lado del cliente utilizando el programa ThunderBird el cual nos permite ingresar al correo electronico creado a traves del servidor SMTP de una manera mas grafica. Al ingresar al programa seleccionaremos la opcion de email y alli llenaremos las credenciales de los usuarios que se crearon del lado del servidor en el programa Mercury, si el servicio esta funcionando nos permitira acceder al correo y realizar todas las tareas correspondientes.
+                </p>
+                <img class="p-4" src="./resources/mail.png" alt="prueba1">
+                <img class="p-4" src="./resources/credenciales.png" alt="prueba2">
+                <img class="p-4" src="./resources/usuarioUno.png" alt="prueba3">
+                <img class="p-4" src="./resources/usuarioDos.png" alt="prueba4">
+              </div>
+            </div>
+          </div>
+          <aside class="col-lg-4 tm-aside-col">
+            <div class="tm-post-sidebar">
+              <hr class="mb-3 tm-hr-primary" />
+              <h2 class="tm-mb-40 tm-post-title tm-color-primary">
+                Post Relacionados
+              </h2>
+              <a href="dhcp.html" class="d-block tm-mb-40">
+                <figure>
+                  <figcaption class="tm-color-primary">
+                    Tutorial de instalacion servidor DHCP
+                  </figcaption>
+                </figure>
+              </a>
+              <a href="http.html" class="d-block tm-mb-40">
+                <figure>
+                  <figcaption class="tm-color-primary">
+                    Tutorial de instalacion servidor HTTP
+                  </figcaption>
+                </figure>
+              </a>
+              <a href="dns.html" class="d-block tm-mb-40">
+                <figure>
+                  <figcaption class="tm-color-primary">
+                    Tutorial de instalacion servidor DNS
+                  </figcaption>
+                </figure>
+              </a>
+            </div>
+          </aside>
+        </div>
+      </main>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/templatemo-script.js"></script>
+  </body>
+</html>

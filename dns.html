@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutorial de servidores</title>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css" />
+    <!-- https://fontawesome.com/ -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <!-- https://fonts.google.com/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/templatemo-xtra-blog.css" rel="stylesheet" />
+    <!--
+    
+TemplateMo 553 Xtra Blog
+
+https://templatemo.com/tm-553-xtra-blog
+
+-->
+  </head>
+  <body>
+    <header class="tm-header" id="tm-header">
+      <div class="tm-header-wrapper">
+        <button
+          class="navbar-toggler"
+          type="button"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="tm-site-header">
+          <div class="mb-3 mx-auto tm-site-logo">
+            <i class="fas fa-graduation-cap fa-2x"></i>
+          </div>
+          <h1 class="text-center">Tutorial de servidores</h1>
+        </div>
+        <nav class="tm-nav" id="tm-nav">
+          <ul>
+            <li class="tm-nav-item">
+              <a href="index.html" class="tm-nav-link">
+                <i class="fas fa-home"></i>
+                Inicio
+              </a>
+            </li>
+            <li class="tm-nav-item active">
+              <a href="dns.html" class="tm-nav-link">
+                <i class="fa fa-laptop"></i>
+                DNS
+              </a>
+            </li>
+            <li class="tm-nav-item">
+              <a href="dhcp.html" class="tm-nav-link">
+                <i class="fa fa-server"></i>
+                DHCP
+              </a>
+            </li>
+            <li class="tm-nav-item">
+              <a href="ftp.html" class="tm-nav-link">
+                <i class="fa fa-folder-open"></i>
+                FTP
+              </a>
+            </li>
+            <li class="tm-nav-item">
+              <a href="smtp.html" class="tm-nav-link">
+                <i class="fa fa-inbox"></i>
+                SMTP
+              </a>
+            </li>
+            <li class="tm-nav-item">
+              <a href="http.html" class="tm-nav-link">
+                <i class="fa fa-code"></i>
+                HTTP
+              </a>
+            </li>
+            <li class="tm-nav-item">
+              <a href="about.html" class="tm-nav-link">
+                <i class="fas fa-users"></i>
+                About
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="tm-mb-65">
+          <a href="https://facebook.com" class="tm-social-link">
+            <i class="fab fa-facebook tm-social-icon"></i>
+          </a>
+          <a href="https://twitter.com" class="tm-social-link">
+            <i class="fab fa-twitter tm-social-icon"></i>
+          </a>
+          <a href="https://instagram.com" class="tm-social-link">
+            <i class="fab fa-instagram tm-social-icon"></i>
+          </a>
+          <a href="https://linkedin.com" class="tm-social-link">
+            <i class="fab fa-linkedin tm-social-icon"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+    <div class="container-fluid">
+      <main class="tm-main">
+        <div class="row tm-row">
+          <div class="col-lg-8 tm-post-col">
+            <div class="tm-post-full">
+              <div class="mb-4">
+                <h2 class="pt-2 tm-color-primary tm-post-title">
+                    Tutorial de instalacion servidor DNS
+                </h2>
+                <p class="tm-mb-40">Marzo 25, 2023 posted por Juan E. Castro</p>
+                <p align="justify">
+                    El sistema de nombres de dominio (DNS) es el directorio telefónico de Internet. Las personas acceden a la información en línea a través de nombres de dominio como nytimes.com o espn.com. Los navegadores web interactúan mediante direcciones de Protocolo de Internet (IP). El DNS traduce los nombres de dominio a direcciones IP para que los navegadores puedan cargar los recursos de Internet.
+                    A continuacion se relizara un tutorial de como se realiza la intalacion de un servidor de DNS en Windows Server 2012.
+                </p>
+                <p>
+                    Requisitos:
+                    <ul class="tm-mb-40 pl-5">
+                        <li class="tm-color-primary">Direccion Ip estatica</li>
+                        <li class="tm-color-primary">Maquina virtual Windows Server 2012</li>
+                    </ul>
+                </p>
+                <h3 class="pt-2 tm-color-primary tm-post-title">
+                    Paso 1: Cofiguracion de Ip estatica.
+                </h3>
+                <p align="justify">
+                    Se configura la Ip estatica de la maquina virtual para poder instalar el servidor de DNS.
+                </p>
+                <img class="tm-mb-40 p-4" src="./resources/ipEstatica.png" alt="paso1">
+                <h3 class="pt-2 tm-color-primary tm-post-title">
+                    Paso 2: Instalacion del servidor DNS.
+                </h3>
+                <p align="justify">
+                    Se realiza la instalacion del servidor de DNS a traves del Administrador del servidor en la opcion Agregar Roles y Caracteristicas.
+                </p>
+                <img class="tm-mb-40 p-4" src="./resources/instalacionDNS.png" alt="paso2">
+                <h3 class="pt-2 tm-color-primary tm-post-title">
+                    Paso 3: Configuracion del servidor DNS.
+                </h3>
+                <p align="justify">
+                    Se realiza la configuracion del servidor de DNS en la seccion herramientas del Administrador del Servidor en la opcion DNS. Nos situaremos primero en la carpeta de Zona de busqueda directa.
+                </p>
+                <img class="tm-mb-40 p-4" src="./resources/configuracionDNS.png" alt="paso3">
+                <h3 class="pt-2 tm-color-primary tm-post-title">
+                    Paso 4: Creacion de Zona de busqueda directa.
+                </h3>
+                <p align="justify">
+                    Se crea una nueva zona de busqueda directa dando click derecho en la carpeta, en este caso la zona se creara con el nombre de juanes.com. Las demas opciones se dejan por defecto siguiendo la intalacion sugerida.
+                </p>
+                <img class="tm-mb-40 p-4" src="./resources/instalacionNuevaZona.png" alt="paso4">
+                <h3 class="pt-2 tm-color-primary tm-post-title">
+                    Paso 5: Creacion de Zona de busqueda inversa.
+                </h3>
+                <p align="justify">
+                    Asi mismo como se creo la zona de busqueda directa, se crea una zona de busqueda invera dando click derecho sobre la carpeta con el mismo nombre en la cual se nos pedira una direccion Ip. Para el caso teniendo en cuenta la configuracion de Ip estatica que se realizo al comienzo esta sera 192.168.4.
+                </p>
+                <img class="tm-mb-40 p-4" src="./resources/instalacionZonaInversa.png" alt="paso5">
+                <h3 class="pt-2 tm-color-primary tm-post-title">
+                    Paso 6: Creacion de host en la zona de busqueda directa.
+                </h3>
+                <p align="justify">
+                    Entrando en la carpeta zonas de busqueda directa entramos a la zona que creamos, damos click derecho en la zona blanca y creamos un nuevo host. El host llevada como nombre www y la direccion Ip de la maquina que configuramos de manera estatica. Para el caso la direccion Ip es 192.168.4.10.
+                </p>
+                <img class="tm-mb-40 p-4" src="./resources/creacionHost.png" alt="paso6">
+                <h3 class="pt-2 tm-color-primary tm-post-title">
+                    Pruebas de funcionamiento del servidor DNS.
+                </h3>
+                <p align="justify">
+                    Para realizar la prueba de que el servidor esta bien configurado, se ejecuta el comando ping en la consola del sistema (cmd) a la direccion www.juanes.com si muestra el ping significa que el servidor quedo configurado correctamente.
+                </p>
+                <img class="tm-mb-40 p-4" src="./resources/pruebaDNS.png" alt="prueba">
+              </div>
+            </div>
+          </div>
+          <aside class="col-lg-4 tm-aside-col">
+            <div class="tm-post-sidebar">
+              <hr class="mb-3 tm-hr-primary" />
+              <h2 class="tm-mb-40 tm-post-title tm-color-primary">
+                Post Relacionados
+              </h2>
+              <a href="dhcp.html" class="d-block tm-mb-40">
+                <figure>
+                  <figcaption class="tm-color-primary">
+                    Tutorial de instalacion servidor DHCP
+                  </figcaption>
+                </figure>
+              </a>
+              <a href="smtp.html" class="d-block tm-mb-40">
+                <figure>
+                  <figcaption class="tm-color-primary">
+                    Tutorial de instalacion servidor SMTP
+                  </figcaption>
+                </figure>
+              </a>
+              <a href="ftp.html" class="d-block tm-mb-40">
+                <figure>
+                  <figcaption class="tm-color-primary">
+                    Tutorial de instalacion servidor FTP
+                  </figcaption>
+                </figure>
+              </a>
+            </div>
+          </aside>
+        </div>
+      </main>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/templatemo-script.js"></script>
+  </body>
+</html>
