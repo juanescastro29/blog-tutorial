@@ -382,6 +382,13 @@ a:hover {
     color: #048c8c;
 }
 
+.img-resize {
+    float: left;
+    width:  600px;
+    height: 400px;
+    object-fit: cover;
+}
+
 a:hover figcaption { color: #056767; }
 .img-thumbnail { max-width: none; }
 .tm-about-pad { padding: 40px 35px; }
