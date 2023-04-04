@@ -40,37 +40,37 @@ https://templatemo.com/tm-553-xtra-blog
         <nav class="tm-nav" id="tm-nav">
           <ul>
             <li class="tm-nav-item">
-              <a href="index.html" class="tm-nav-link">
+              <a href="indexLinux.html" class="tm-nav-link">
                 <i class="fas fa-home"></i>
                 Inicio
               </a>
             </li>
-            <li class="tm-nav-item">
-              <a href="dns.html" class="tm-nav-link">
+            <li class="tm-nav-item active">
+              <a href="dnsCentos.html" class="tm-nav-link">
                 <i class="fa fa-laptop"></i>
                 DNS
               </a>
             </li>
-            <li class="tm-nav-item active">
-              <a href="dhcp.html" class="tm-nav-link">
+            <li class="tm-nav-item">
+              <a href="dhcpCentos.html" class="tm-nav-link">
                 <i class="fa fa-server"></i>
                 DHCP
               </a>
             </li>
             <li class="tm-nav-item">
-              <a href="ftp.html" class="tm-nav-link">
+              <a href="ftpCentos.html" class="tm-nav-link">
                 <i class="fa fa-folder-open"></i>
                 FTP
               </a>
             </li>
             <li class="tm-nav-item">
-              <a href="smtp.html" class="tm-nav-link">
+              <a href="smtpCentos.html" class="tm-nav-link">
                 <i class="fa fa-inbox"></i>
                 SMTP
               </a>
             </li>
             <li class="tm-nav-item">
-              <a href="http.html" class="tm-nav-link">
+              <a href="httpCentos.html" class="tm-nav-link">
                 <i class="fa fa-code"></i>
                 HTTP
               </a>
@@ -109,73 +109,86 @@ https://templatemo.com/tm-553-xtra-blog
             <div class="tm-post-full">
               <div class="mb-4">
                 <h2 class="pt-2 tm-color-primary tm-post-title">
-                    Tutorial de instalacion servidor DHCP
+                    Tutorial de instalacion servidor DNS
                 </h2>
-                <p class="tm-mb-40">Marzo 25, 2023 posted por Juan E. Castro</p>
+                <p class="tm-mb-40">Abril 4, 2023 posted por Juan E. Castro</p>
                 <p align="justify">
-                    Es un protocolo de red que utiliza una arquitectura cliente-servidor. Por tanto, tendremos uno o varios servidores DHCP y también uno o varios clientes, que se deberán comunicar entre ellos correctamente para que el servidor DHCP brinde información a los diferentes clientes conectados. Este protocolo se encarga de asignar de manera dinámica y automática una dirección IP, ya sea una dirección IP privada desde el router hacia los equipos de la red local, o también una IP pública por parte de un operador que utilice este tipo de protocolo para el establecimiento de la conexión.
-                    A continuacion se relizara un tutorial de como se realiza la intalacion de un servidor de DNS en Windows Server 2012.
+                    El sistema de nombres de dominio (DNS) es el directorio telefónico de Internet. Las personas acceden a la información en línea a través de nombres de dominio como nytimes.com o espn.com. Los navegadores web interactúan mediante direcciones de Protocolo de Internet (IP). El DNS traduce los nombres de dominio a direcciones IP para que los navegadores puedan cargar los recursos de Internet.
+                    A continuacion se relizara un tutorial de como se realiza la intalacion de un servidor de DNS en Centos 7.
                 </p>
                 <p>
                     Requisitos:
                     <ul class="tm-mb-40 pl-5">
                         <li class="tm-color-primary">Direccion Ip estatica</li>
-                        <li class="tm-color-primary">Servidor DNS</li>
-                        <li class="tm-color-primary">Maquina virtual Windows Server 2012</li>
-                        <li class="tm-color-primary">Maquina virtual con Window XP, 7, 8, 8.1</li>
+                        <li class="tm-color-primary">Maquina virtual Centos 7</li>
                     </ul>
                 </p>
                 <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Paso 1: Intalacion del servidor DHCP.
+                    Paso 1: Cofiguracion de Ip estatica.
                 </h3>
                 <p align="justify">
-                    Se realiza la instalacion del servidor de DHCP a traves del Administrador del servidor en la opcion Agregar Roles y Caracteristicas.
+                    Se configura la Ip estatica de la maquina virtual para poder instalar el servidor de DNS.
                 </p>
-                <img class="tm-mb-40 p-4 img-resize" src="./resources/instalacionDHCP.png" alt="paso1">
+                <img class="tm-mb-40 p-4 img-resize" src="./resources/DNS/2.png" alt="paso1">
                 <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Paso 2: Configuracion del servidor DHCP.
+                    Paso 2: Instalacion del servidor DNS.
                 </h3>
                 <p align="justify">
-                    Se realiza la configuracion del servidor de DHCP en la seccion herramientas del Administrador del Servidor en la opcion DHCP. Se abre la carpeta principal y nos situamos en la carpeta de IPv4.
+                    Se realiza la instalacion del servidor de DNS a traves del comando en Linux el cual es el siguiente.
                 </p>
-                <img class="tm-mb-40 p-4 img-resize" src="./resources/configuracionDHCP.png" alt="paso2">
+                <img class="tm-mb-40 p-4" src="./resources/DNS/1.png" alt="paso2">
                 <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Paso 3: Creacion y configuracion del Ambito.
+                    Paso 3: Configuracion del servidor DNS.
                 </h3>
                 <p align="justify">
-                    Situados en la carpeta de IPv4 damos click derecho y seleccionamos la opcion de Ambito Nuevo y procedemos a la configuracion de un nuevo Ambito para el servidor DHCP. El nombre del ambito puede ser cualquiera.
+                    Se realiza la configuracion del servidor de DNS en la ruta /etc/named.conf donde abrimos esa ruta con cualquier editor de text. Asi mismo definimos la ubicacion de nuestras zonas de busqueda directa e inversa.
                 </p>
-                <img class="tm-mb-40 p-4 img-resize" src="./resources/creacionAmbito.png" alt="paso3">
+                <img class="p-4" src="./resources/DNS/3.png" alt="paso3">
+                <img class="p-4" src="./resources/DNS/4.png" alt="paso3">
+                <img class="tm-mb-40 p-4" src="./resources/DNS/5.png" alt="paso3">
                 <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Paso 4: Configuracion del rango del Ambito.
+                    Paso 4: Creacion de Zona de busqueda directa.
                 </h3>
                 <p align="justify">
-                    En el paso anterior empezamos con la configuracion del Ambito Nuevo, continuando con esto lo primero que que es necesario configurar es el rango de direcciones las cuales repartira nuestro servidor DHCP.
+                    Se crea una nueva zona de busqueda directa la cual se realiza creando un documento en la direccion /var/named a la cual le llamaremos directa, este documento lo abriremos con cualquier editor de texto y tendra la siguiente configuracion.
                 </p>
-                <img class="tm-mb-40 p-4 img-resize" src="./resources/rangoDHCP.png" alt="paso4">
+                <img class="tm-mb-40 p-4" src="./resources/DNS/6.png" alt="paso4">
                 <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Paso 5: Configuracion de la direccion para router del Ambito.
+                    Paso 5: Creacion de Zona de busqueda inversa.
                 </h3>
                 <p align="justify">
-                    En este paso se coloca la direccion de puerta de enlace configurada en la Ip estatica de la maquina virtual, para el caso es 192.168.4.2 se da en agregar y siguiente. 
+                    Asi mismo como se creo la zona de busqueda directa, se crea una zona de busqueda invera en la misma direccion donde se creo la zona ed busqueda directa, esta zona de busqueda inversa tendra la siguiente configuracion.
                 </p>
-                <img class="tm-mb-40 p-4 img-resize" src="./resources/router.png" alt="paso5">
+                <img class="tm-mb-40 p-4" src="./resources/DNS/7.png" alt="paso5">
                 <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Paso 6: Configuracion de nombre de dominio y DNS.
+                    Paso 6: Configurar el grupo propietario para los archivos anteriores.
                 </h3>
                 <p align="justify">
-                    Como requisito inicial era necesario tener un servidor de DNS configurado, para este caso el servidor configurado tiene el nombre de juanes.com y tiene la direccion Ip 192.168.4.10.
+                    El grupo propietario para ambos archivos debe ser named para que nuestro servicio pueda tener acceso a los mismos.
                 </p>
-                <img class="tm-mb-40 p-4 img-resize" src="./resources/servidorDNSDHCP.png" alt="paso6">
+                <img class="tm-mb-40 p-4" src="./resources/DNS/8.png" alt="paso6">
                 <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Pruebas de funcionamiento del servidor DHCP.
+                    Paso 6: Configurar el grupo propietario para los archivos anteriores.
                 </h3>
                 <p align="justify">
-                    Para realizar la prueba de que el servidor esta bien configurado, vamos a nuestra maquina virtual configurada como cliente. Con el comando ipconfig en la consola del sistema (cmd) podemos observar que nuestro servicio DHCP esta funcionando correctamente.
-                    Tambien lo podemos comprobar en el lado del servidor entrando a la carpeta del ambito creado y entrando en la otra carpeta llamada Concesiones de direcciones.
+                    El grupo propietario para ambos archivos debe ser named para que nuestro servicio pueda tener acceso a los mismos.
                 </p>
-                <img class="p-4 img-resize" src="./resources/pingCliente.png" alt="prueba1">
-                <img class="tm-mb-40 p-4 img-resize" src="./resources/ladoSevidor.png" alt="prueba"2>
+                <img class="tm-mb-40 p-4" src="./resources/DNS/8.png" alt="paso6">
+                <h3 class="pt-2 tm-color-primary tm-post-title">
+                  Paso 7: Configuraciones adicionales.
+                </h3>
+                <p align="justify">
+                  Editamos el archivo resolv.conf para indicar a nuestro servidor que él es el DNS. Allí colocamos la IP del servidor que estamos configurando. Editamos el archivo hosts y colocamos la IP del servidor así como el nombre del mismo.
+                </p>
+                <img class="p-4" src="./resources/DNS/9.png" alt="paso7">
+                <img class="tm-mb-40 p-4" src="./resources/DNS/10.png" alt="paso7">
+                <h3 class="pt-2 tm-color-primary tm-post-title">
+                    Pruebas de funcionamiento del servidor DNS.
+                </h3>
+                <p align="justify">
+                    Para realizar la prueba de que el servidor esta bien configurado, se ejecuta el comando ping en la consola del sistema (cmd) a la direccion www.juanes.com si muestra el ping significa que el servidor quedo configurado correctamente.
+                </p>
+                <img class="tm-mb-40 p-4 img-resize" src="./resources/DNS/12.png" alt="prueba">
               </div>
             </div>
           </div>
@@ -185,21 +198,21 @@ https://templatemo.com/tm-553-xtra-blog
               <h2 class="tm-mb-40 tm-post-title tm-color-primary">
                 Post Relacionados
               </h2>
-              <a href="http.html" class="d-block tm-mb-40">
+              <a href="dhcpCentos.html" class="d-block tm-mb-40">
                 <figure>
                   <figcaption class="tm-color-primary">
-                    Tutorial de instalacion servidor HTTP
+                    Tutorial de instalacion servidor DHCP
                   </figcaption>
                 </figure>
               </a>
-              <a href="smtp.html" class="d-block tm-mb-40">
+              <a href="smtpCentos.html" class="d-block tm-mb-40">
                 <figure>
                   <figcaption class="tm-color-primary">
                     Tutorial de instalacion servidor SMTP
                   </figcaption>
                 </figure>
               </a>
-              <a href="ftp.html" class="d-block tm-mb-40">
+              <a href="ftpCentos.html" class="d-block tm-mb-40">
                 <figure>
                   <figcaption class="tm-color-primary">
                     Tutorial de instalacion servidor FTP

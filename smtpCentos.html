@@ -40,37 +40,37 @@ https://templatemo.com/tm-553-xtra-blog
         <nav class="tm-nav" id="tm-nav">
           <ul>
             <li class="tm-nav-item">
-              <a href="index.html" class="tm-nav-link">
+              <a href="indexLinux.html" class="tm-nav-link">
                 <i class="fas fa-home"></i>
                 Inicio
               </a>
             </li>
             <li class="tm-nav-item">
-              <a href="dns.html" class="tm-nav-link">
+              <a href="dnsCentos.html" class="tm-nav-link">
                 <i class="fa fa-laptop"></i>
                 DNS
               </a>
             </li>
             <li class="tm-nav-item">
-              <a href="dhcp.html" class="tm-nav-link">
+              <a href="dhcpCentos.html" class="tm-nav-link">
                 <i class="fa fa-server"></i>
                 DHCP
               </a>
             </li>
             <li class="tm-nav-item">
-              <a href="ftp.html" class="tm-nav-link">
+              <a href="ftpCentos.html" class="tm-nav-link">
                 <i class="fa fa-folder-open"></i>
                 FTP
               </a>
             </li>
-            <li class="tm-nav-item">
-              <a href="smtp.html" class="tm-nav-link">
+            <li class="tm-nav-item active">
+              <a href="smtpCentos.html" class="tm-nav-link">
                 <i class="fa fa-inbox"></i>
                 SMTP
               </a>
             </li>
-            <li class="tm-nav-item active">
-              <a href="http.html" class="tm-nav-link">
+            <li class="tm-nav-item">
+              <a href="httpCentos.html" class="tm-nav-link">
                 <i class="fa fa-code"></i>
                 HTTP
               </a>
@@ -90,13 +90,13 @@ https://templatemo.com/tm-553-xtra-blog
           </ul>
         </nav>
         <div class="tm-mb-65">
-          <a href="https://github.com/juanescastro29" class="tm-social-link" target="_blank">
+          <a href="https://github.com/juanescastro29" class="tm-social-link">
             <i class="fab fa-github tm-social-icon"></i>
           </a>
-          <a href="https://www.linkedin.com/in/juan-esteban-castro-molano-248912150/" class="tm-social-link" target="_blank">
+          <a href="https://www.linkedin.com/in/juan-esteban-castro-molano-248912150/" class="tm-social-link">
             <i class="fab fa-linkedin tm-social-icon"></i>
           </a>
-          <a href="https://www.instagram.com/juanes_castro29/" class="tm-social-link" target="_blank">
+          <a href="https://www.instagram.com/juanes_castro29/" class="tm-social-link">
             <i class="fab fa-instagram tm-social-icon"></i>
           </a>
         </div>
@@ -109,49 +109,68 @@ https://templatemo.com/tm-553-xtra-blog
             <div class="tm-post-full">
               <div class="mb-4">
                 <h2 class="pt-2 tm-color-primary tm-post-title">
-                    Tutorial de instalacion servidor HTTP
+                    Tutorial de instalacion servidor SMTP
                 </h2>
-                <p class="tm-mb-40">Marzo 25, 2023 posted por Juan E. Castro</p>
+                <p class="tm-mb-40">Abril 4, 2023 posted por Juan E. Castro</p>
                 <p align="justify">
-                    El HTTP es el protocolo de transmisión de información de la World Wide Web, es decir, el código que se establece para que el computador solicitante y el que contiene la información solicitada puedan “hablar” un mismo idioma a la hora de transmitir información por la red.
+                    El protocolo simple de transferencia de correo (SMTP) es un protocolo TCP/IP que se utiliza para enviar y recibir correo electrónico. Normalmente se utiliza con POP3 o con el protocolo de acceso a mensajes de Internet (IMAP) para guardar mensajes en un buzón del servidor y descargarlos periódicamente del servidor para el usuario.
                 </p>
                 <p>
                     Requisitos:
                     <ul class="tm-mb-40 pl-5">
+                        <li class="tm-color-primary">Programa ThunderBird en el cliente</li>
                         <li class="tm-color-primary">Direccion Ip estatica</li>
-                        <li class="tm-color-primary">Maquina virtual Windows Server 2012</li>
+                        <li class="tm-color-primary">Maquina virtual Centos 7</li>
                         <li class="tm-color-primary">Maquina virtual con Window XP, 7, 8, 8.1</li>
                     </ul>
                 </p>
                 <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Paso 1: Instalacion de servidor IIS.
+                    Paso 1: Instalacion de Postfix.
                 </h3>
                 <p align="justify">
-                    Se realiza la instalacion del servidor IIS a traves del Administrador del servidor en la opcion Agregar Roles y Caracteristicas.
+                    Para montar nuestro servidor de correos uno de los servicios que nesecitaremos sera postfix, el cual se instalara de la siguiente manera.
                 </p>
-                <img class="tm-mb-40 p-4 img-resize" src="./resources/instalacionIIS.png" alt="paso1">
+                <img class="tm-mb-40 p-4" src="./resources/SMTP/2.png" alt="paso1">
                 <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Paso 2: Configuracion del servicio HTTP el servidor IIS.
+                    Paso 2: Instalacion de Dovecot.
                 </h3>
                 <p align="justify">
-                    Entramos en la configuracion del servidor IIS en la pestaña herramientas en el Administrador de Servidor.
-                </p> 
-                <img class="tm-mb-40 p-4 img-resize" src="./resources/configuracionHTTP.png" alt="paso1">
-                <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Paso 3: Configuracion del servicio HTTP en el servidor IIS.
-                </h3>
-                <p align="justify">
-                    Damos click derecho en la carpeta sitios y escogemos la opcion Agregar sitio Web. El nombre del sitio sera el que nosotros queramos, la ruta de acceso correspondera a la ubicacion de nuestros archivos de una pagina web y por ultimo la direccion Ip sera la Ip de la maquina.
+                  Para montar nuestro servidor de correos uno de los servicios que nesecitaremos sera dovecot, el cual se instalara de la siguiente manera.
                 </p>
-                <img class="tm-mb-40 p-4 img-resize" src="./resources/nuevoSitioWeb.png" alt="paso3">
+                <img class="tm-mb-40 p-4" src="./resources/SMTP/1.png" alt="paso2">
                 <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Pruebas de funcionamiento del servidor HTTP.
+                    Paso 3: Configuracion de postfix.
                 </h3>
                 <p align="justify">
-                    En el lado del cliente la prueba se realizara entrando al navegador y poner en la barra de direccion el nombre que se le coloco al sitio en la creacion del mismo, esto tambien se puede realizar ingresando la direccion Ip que se coloco en los pasos anteriores.
+                    La configuracion de postfix se realizara en la siguiente ruta /etc/postfix alli abriremos el archivo de configuracion main.cf y realizaremos las siguientes configuraciones.
                 </p>
-                <img class="p-4 img-resize" src="./resources/prueba1.png" alt="prueba1">
-                <img class="p-4 img-resize" src="./resources/prueba2.png" alt="prueba2">
+                <img class="p-4" src="./resources/SMTP/3.png" alt="paso3">
+                <img class="p-4" src="./resources/SMTP/4.png" alt="paso3">
+                <img class="p-4" src="./resources/SMTP/5.png" alt="paso3">
+                <img class="p-4" src="./resources/SMTP/6.png" alt="paso3">
+                <img class="p-4" src="./resources/SMTP/7.png" alt="paso3">
+                <img class="p-4" src="./resources/SMTP/8.png" alt="paso3">
+                <img class="tm-mb-40 p-4" src="./resources/SMTP/9.png" alt="paso3">
+                <h3 class="pt-2 tm-color-primary tm-post-title">
+                    Paso 4: Configuracion de Dovecot.
+                </h3>
+                <p align="justify">
+                    Para la configuracion de dovecot se realizara de la siguiente manera en el archivo ubicado en /etc/dovecot.
+                </p>
+                <img class="p-4" src="./resources/SMTP/10.png" alt="paso4">
+                <img class="p-4" src="./resources/SMTP/11.png" alt="paso4">
+                <img class="p-4" src="./resources/SMTP/12.png" alt="paso4">
+                <img class="p-4" src="./resources/SMTP/13.png" alt="paso4">
+                <img class="p-4" src="./resources/SMTP/14.png" alt="paso4">
+                <img class="tm-mb-40 p-4" src="./resources/SMTP/15.png" alt="paso4">
+                <h3 class="pt-2 tm-color-primary tm-post-title">
+                    Pruebas de funcionamiento del servidor SMTP.
+                </h3>
+                <p align="justify">
+                    La verificacion se realizara desde el lado del cliente utilizando el programa ThunderBird el cual nos permite ingresar al correo electronico creado a traves del servidor SMTP de una manera mas grafica. Al ingresar al programa seleccionaremos la opcion de email y alli llenaremos las credenciales de los usuarios que se crearon del lado del servidor en el programa Mercury, si el servicio esta funcionando nos permitira acceder al correo y realizar todas las tareas correspondientes.
+                </p>
+                <img class="p-4" src="./resources/SMTP/16.png" alt="prueba1">
+                <img class="p-4" src="./resources/SMTP/17.png" alt="prueba2">
               </div>
             </div>
           </div>
@@ -161,21 +180,21 @@ https://templatemo.com/tm-553-xtra-blog
               <h2 class="tm-mb-40 tm-post-title tm-color-primary">
                 Post Relacionados
               </h2>
-              <a href="dhcp.html" class="d-block tm-mb-40">
+              <a href="dhcpCentos.html" class="d-block tm-mb-40">
                 <figure>
                   <figcaption class="tm-color-primary">
                     Tutorial de instalacion servidor DHCP
                   </figcaption>
                 </figure>
               </a>
-              <a href="smtp.html" class="d-block tm-mb-40">
+              <a href="httpCentos.html" class="d-block tm-mb-40">
                 <figure>
                   <figcaption class="tm-color-primary">
-                    Tutorial de instalacion servidor SMTP
+                    Tutorial de instalacion servidor HTTP
                   </figcaption>
                 </figure>
               </a>
-              <a href="dns.html" class="d-block tm-mb-40">
+              <a href="dnsCentos.html" class="d-block tm-mb-40">
                 <figure>
                   <figcaption class="tm-color-primary">
                     Tutorial de instalacion servidor DNS

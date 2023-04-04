@@ -40,37 +40,37 @@ https://templatemo.com/tm-553-xtra-blog
         <nav class="tm-nav" id="tm-nav">
           <ul>
             <li class="tm-nav-item">
-              <a href="index.html" class="tm-nav-link">
+              <a href="indexLinux.html" class="tm-nav-link">
                 <i class="fas fa-home"></i>
                 Inicio
               </a>
             </li>
             <li class="tm-nav-item">
-              <a href="dns.html" class="tm-nav-link">
+              <a href="dnsCentos.html" class="tm-nav-link">
                 <i class="fa fa-laptop"></i>
                 DNS
               </a>
             </li>
-            <li class="tm-nav-item">
-              <a href="dhcp.html" class="tm-nav-link">
+            <li class="tm-nav-item active">
+              <a href="dhcpCentos.html" class="tm-nav-link">
                 <i class="fa fa-server"></i>
                 DHCP
               </a>
             </li>
             <li class="tm-nav-item">
-              <a href="ftp.html" class="tm-nav-link">
+              <a href="ftpCentos.html" class="tm-nav-link">
                 <i class="fa fa-folder-open"></i>
                 FTP
               </a>
             </li>
             <li class="tm-nav-item">
-              <a href="smtp.html" class="tm-nav-link">
+              <a href="smtpCentos.html" class="tm-nav-link">
                 <i class="fa fa-inbox"></i>
                 SMTP
               </a>
             </li>
-            <li class="tm-nav-item active">
-              <a href="http.html" class="tm-nav-link">
+            <li class="tm-nav-item">
+              <a href="httpCentos.html" class="tm-nav-link">
                 <i class="fa fa-code"></i>
                 HTTP
               </a>
@@ -109,49 +109,43 @@ https://templatemo.com/tm-553-xtra-blog
             <div class="tm-post-full">
               <div class="mb-4">
                 <h2 class="pt-2 tm-color-primary tm-post-title">
-                    Tutorial de instalacion servidor HTTP
+                    Tutorial de instalacion servidor DHCP
                 </h2>
-                <p class="tm-mb-40">Marzo 25, 2023 posted por Juan E. Castro</p>
+                <p class="tm-mb-40">Abril 4, 2023 posted por Juan E. Castro</p>
                 <p align="justify">
-                    El HTTP es el protocolo de transmisión de información de la World Wide Web, es decir, el código que se establece para que el computador solicitante y el que contiene la información solicitada puedan “hablar” un mismo idioma a la hora de transmitir información por la red.
+                    Es un protocolo de red que utiliza una arquitectura cliente-servidor. Por tanto, tendremos uno o varios servidores DHCP y también uno o varios clientes, que se deberán comunicar entre ellos correctamente para que el servidor DHCP brinde información a los diferentes clientes conectados. Este protocolo se encarga de asignar de manera dinámica y automática una dirección IP, ya sea una dirección IP privada desde el router hacia los equipos de la red local, o también una IP pública por parte de un operador que utilice este tipo de protocolo para el establecimiento de la conexión.
+                    A continuacion se relizara un tutorial de como se realiza la intalacion de un servidor de DNS en Centos 7.
                 </p>
                 <p>
                     Requisitos:
                     <ul class="tm-mb-40 pl-5">
                         <li class="tm-color-primary">Direccion Ip estatica</li>
-                        <li class="tm-color-primary">Maquina virtual Windows Server 2012</li>
+                        <li class="tm-color-primary">Servidor DNS</li>
+                        <li class="tm-color-primary">Maquina virtual Centos 7</li>
                         <li class="tm-color-primary">Maquina virtual con Window XP, 7, 8, 8.1</li>
                     </ul>
                 </p>
                 <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Paso 1: Instalacion de servidor IIS.
+                    Paso 1: Intalacion del servidor DHCP.
                 </h3>
                 <p align="justify">
-                    Se realiza la instalacion del servidor IIS a traves del Administrador del servidor en la opcion Agregar Roles y Caracteristicas.
+                    Se realiza la instalacion del servicio de DHCP para Linux con el siguiente comando.
                 </p>
-                <img class="tm-mb-40 p-4 img-resize" src="./resources/instalacionIIS.png" alt="paso1">
+                <img class="tm-mb-40 p-4" src="./resources/DHCP/1.png" alt="paso1">
                 <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Paso 2: Configuracion del servicio HTTP el servidor IIS.
+                    Paso 2: Configuracion del servidor DHCP.
                 </h3>
                 <p align="justify">
-                    Entramos en la configuracion del servidor IIS en la pestaña herramientas en el Administrador de Servidor.
-                </p> 
-                <img class="tm-mb-40 p-4 img-resize" src="./resources/configuracionHTTP.png" alt="paso1">
-                <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Paso 3: Configuracion del servicio HTTP en el servidor IIS.
-                </h3>
-                <p align="justify">
-                    Damos click derecho en la carpeta sitios y escogemos la opcion Agregar sitio Web. El nombre del sitio sera el que nosotros queramos, la ruta de acceso correspondera a la ubicacion de nuestros archivos de una pagina web y por ultimo la direccion Ip sera la Ip de la maquina.
+                    Se realiza la configuracion del servidor de DHCP en el documento ubicado el la direccion /etc/dhcp. Alli encontraremos el archivo dhcp.conf el cual lo abriremos con un editor de texto y realizaremos la siguiente configuracion. Si hay alguna linea que este comentada se debera descomentar.
                 </p>
-                <img class="tm-mb-40 p-4 img-resize" src="./resources/nuevoSitioWeb.png" alt="paso3">
+                <img class="tm-mb-40 p-4" src="./resources/DHCP/2.png" alt="paso2">
                 <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Pruebas de funcionamiento del servidor HTTP.
+                    Pruebas de funcionamiento del servidor DHCP.
                 </h3>
                 <p align="justify">
-                    En el lado del cliente la prueba se realizara entrando al navegador y poner en la barra de direccion el nombre que se le coloco al sitio en la creacion del mismo, esto tambien se puede realizar ingresando la direccion Ip que se coloco en los pasos anteriores.
+                    Para realizar la prueba de que el servidor esta bien configurado, vamos a nuestra maquina virtual configurada como cliente. Con el comando ipconfig en la consola del sistema (cmd) podemos observar que nuestro servicio DHCP esta funcionando correctamente.
                 </p>
-                <img class="p-4 img-resize" src="./resources/prueba1.png" alt="prueba1">
-                <img class="p-4 img-resize" src="./resources/prueba2.png" alt="prueba2">
+                <img class="p-4 img-resize" src="./resources/DHCP/3.png" alt="prueba1">
               </div>
             </div>
           </div>
@@ -161,24 +155,24 @@ https://templatemo.com/tm-553-xtra-blog
               <h2 class="tm-mb-40 tm-post-title tm-color-primary">
                 Post Relacionados
               </h2>
-              <a href="dhcp.html" class="d-block tm-mb-40">
+              <a href="httpCentos.html" class="d-block tm-mb-40">
                 <figure>
                   <figcaption class="tm-color-primary">
-                    Tutorial de instalacion servidor DHCP
+                    Tutorial de instalacion servidor HTTP
                   </figcaption>
                 </figure>
               </a>
-              <a href="smtp.html" class="d-block tm-mb-40">
+              <a href="smtpCentos.html" class="d-block tm-mb-40">
                 <figure>
                   <figcaption class="tm-color-primary">
                     Tutorial de instalacion servidor SMTP
                   </figcaption>
                 </figure>
               </a>
-              <a href="dns.html" class="d-block tm-mb-40">
+              <a href="ftpCentos.html" class="d-block tm-mb-40">
                 <figure>
                   <figcaption class="tm-color-primary">
-                    Tutorial de instalacion servidor DNS
+                    Tutorial de instalacion servidor FTP
                   </figcaption>
                 </figure>
               </a>

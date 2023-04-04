@@ -40,37 +40,37 @@ https://templatemo.com/tm-553-xtra-blog
         <nav class="tm-nav" id="tm-nav">
           <ul>
             <li class="tm-nav-item">
-              <a href="index.html" class="tm-nav-link">
+              <a href="indexLinux.html" class="tm-nav-link">
                 <i class="fas fa-home"></i>
                 Inicio
               </a>
             </li>
             <li class="tm-nav-item">
-              <a href="dns.html" class="tm-nav-link">
+              <a href="dnsCentos.html" class="tm-nav-link">
                 <i class="fa fa-laptop"></i>
                 DNS
               </a>
             </li>
             <li class="tm-nav-item">
-              <a href="dhcp.html" class="tm-nav-link">
+              <a href="dhcpCentos.html" class="tm-nav-link">
                 <i class="fa fa-server"></i>
                 DHCP
               </a>
             </li>
             <li class="tm-nav-item">
-              <a href="ftp.html" class="tm-nav-link">
+              <a href="ftpCentos.html" class="tm-nav-link">
                 <i class="fa fa-folder-open"></i>
                 FTP
               </a>
             </li>
             <li class="tm-nav-item">
-              <a href="smtp.html" class="tm-nav-link">
+              <a href="smtpCentos.html" class="tm-nav-link">
                 <i class="fa fa-inbox"></i>
                 SMTP
               </a>
             </li>
             <li class="tm-nav-item active">
-              <a href="http.html" class="tm-nav-link">
+              <a href="httpCentos.html" class="tm-nav-link">
                 <i class="fa fa-code"></i>
                 HTTP
               </a>
@@ -111,7 +111,7 @@ https://templatemo.com/tm-553-xtra-blog
                 <h2 class="pt-2 tm-color-primary tm-post-title">
                     Tutorial de instalacion servidor HTTP
                 </h2>
-                <p class="tm-mb-40">Marzo 25, 2023 posted por Juan E. Castro</p>
+                <p class="tm-mb-40">Abril 4, 2023 posted por Juan E. Castro</p>
                 <p align="justify">
                     El HTTP es el protocolo de transmisión de información de la World Wide Web, es decir, el código que se establece para que el computador solicitante y el que contiene la información solicitada puedan “hablar” un mismo idioma a la hora de transmitir información por la red.
                 </p>
@@ -119,39 +119,46 @@ https://templatemo.com/tm-553-xtra-blog
                     Requisitos:
                     <ul class="tm-mb-40 pl-5">
                         <li class="tm-color-primary">Direccion Ip estatica</li>
-                        <li class="tm-color-primary">Maquina virtual Windows Server 2012</li>
+                        <li class="tm-color-primary">Maquina virtual Centos 7</li>
                         <li class="tm-color-primary">Maquina virtual con Window XP, 7, 8, 8.1</li>
                     </ul>
                 </p>
                 <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Paso 1: Instalacion de servidor IIS.
+                    Paso 1: Instalacion de servidor HTTP.
                 </h3>
                 <p align="justify">
-                    Se realiza la instalacion del servidor IIS a traves del Administrador del servidor en la opcion Agregar Roles y Caracteristicas.
+                    Se realiza la instalacion del servidor HTTP a traves del siguiente comando de Linux.
                 </p>
-                <img class="tm-mb-40 p-4 img-resize" src="./resources/instalacionIIS.png" alt="paso1">
+                <img class="tm-mb-40 p-4" src="./resources/HTTP/1.png" alt="paso1">
                 <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Paso 2: Configuracion del servicio HTTP el servidor IIS.
+                    Paso 2: Configuracion del servidor HTTP.
                 </h3>
                 <p align="justify">
-                    Entramos en la configuracion del servidor IIS en la pestaña herramientas en el Administrador de Servidor.
+                    Entramos al archivo de configuracion del servidor en la siguiente ubicacion /etc/httpd/conf/. Alli realizaremos la siguiente configuracion.
                 </p> 
-                <img class="tm-mb-40 p-4 img-resize" src="./resources/configuracionHTTP.png" alt="paso1">
+                <img class="tm-mb-40 p-4" src="./resources/HTTP/2.png" alt="paso1">
                 <h3 class="pt-2 tm-color-primary tm-post-title">
-                    Paso 3: Configuracion del servicio HTTP en el servidor IIS.
+                    Paso 3: Configuracion del virtual host.
                 </h3>
                 <p align="justify">
-                    Damos click derecho en la carpeta sitios y escogemos la opcion Agregar sitio Web. El nombre del sitio sera el que nosotros queramos, la ruta de acceso correspondera a la ubicacion de nuestros archivos de una pagina web y por ultimo la direccion Ip sera la Ip de la maquina.
+                    Para la creacion del virtual host nos devolveremos una carpeta hacia atras y entraremos a la carpeta conf.d. Alli crearemos el siguiente archivo.
                 </p>
-                <img class="tm-mb-40 p-4 img-resize" src="./resources/nuevoSitioWeb.png" alt="paso3">
+                <img class="p-4" src="./resources/HTTP/3.png" alt="paso3">
+                <img class="tm-mb-40 p-4" src="./resources/HTTP/4.png" alt="paso3">
+                <h3 class="pt-2 tm-color-primary tm-post-title">
+                  Paso 4: Carpeta de la pagina web.
+                </h3>
+                <p align="justify">
+                    Se creara una carpeta que contenga nuestro sitio web en la direccion que especificamos en el paso anterior.
+                </p>
+                <img class="tm-mb-40 p-4" src="./resources/HTTP/5.png" alt="paso3">
                 <h3 class="pt-2 tm-color-primary tm-post-title">
                     Pruebas de funcionamiento del servidor HTTP.
                 </h3>
                 <p align="justify">
                     En el lado del cliente la prueba se realizara entrando al navegador y poner en la barra de direccion el nombre que se le coloco al sitio en la creacion del mismo, esto tambien se puede realizar ingresando la direccion Ip que se coloco en los pasos anteriores.
                 </p>
-                <img class="p-4 img-resize" src="./resources/prueba1.png" alt="prueba1">
-                <img class="p-4 img-resize" src="./resources/prueba2.png" alt="prueba2">
+                <img class="p-4" src="./resources/HTTP/6.png" alt="prueba1">
               </div>
             </div>
           </div>
@@ -161,21 +168,21 @@ https://templatemo.com/tm-553-xtra-blog
               <h2 class="tm-mb-40 tm-post-title tm-color-primary">
                 Post Relacionados
               </h2>
-              <a href="dhcp.html" class="d-block tm-mb-40">
+              <a href="dhcpCentos.html" class="d-block tm-mb-40">
                 <figure>
                   <figcaption class="tm-color-primary">
                     Tutorial de instalacion servidor DHCP
                   </figcaption>
                 </figure>
               </a>
-              <a href="smtp.html" class="d-block tm-mb-40">
+              <a href="smtpCentos.html" class="d-block tm-mb-40">
                 <figure>
                   <figcaption class="tm-color-primary">
                     Tutorial de instalacion servidor SMTP
                   </figcaption>
                 </figure>
               </a>
-              <a href="dns.html" class="d-block tm-mb-40">
+              <a href="dnsCentos.html" class="d-block tm-mb-40">
                 <figure>
                   <figcaption class="tm-color-primary">
                     Tutorial de instalacion servidor DNS
